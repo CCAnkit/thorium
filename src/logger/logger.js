@@ -6,7 +6,7 @@ function printMessage(message)
 }
 function welcome()
 {
-    console.log("welcome to my Application. I'm Khushboo Babil from FunctionUp Thorium Cohort");
+    console.log("welcome to my Application. I'm Ankit Gupta from FunctionUp Thorium Cohort");
 }
 module.exports.endPoint=url;
 module.exports.printMessage=printMessage;
