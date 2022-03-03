@@ -21,7 +21,7 @@ const createNewBook= async function (req, res) {
             const bookData=await bookModel.create(book)
             res.send({data:bookData})
         }
-        else{
+        else{0
             res.send({error:"Invalid publisher Id"})
         }
     }else{
