@@ -21,7 +21,7 @@ const createNewBook= async function (req, res) {
             const bookData=await bookModel.create(book)
             res.send({data:bookData})
         }
-        else{0
+        else{
             res.send({error:"Invalid publisher Id"})
         }
     }else{
@@ -36,6 +36,19 @@ const getAllBooks= async function (req, res) {
     res.send({data: allBook})
 }
 
+const newData = async function (req, res) {
+    {
+        const update = await bookModel.updateMany({$or: [{"publisher":"62207b420c7a6b716bf251d3" },{"publisher": "62207b5f0c7a6b716bf251d7"}]},{"isHardCover" : true});
+         res.send({msg:update})
+       }
+
+}
+
+const increaseSale= async function (req, res) {
+    let increasePrice = await bookModel.updateMany({ratings:{$gt:3.5}},{$inc : {price: +10}});
+
+    res.send({msg: increasePrice })
+}
 const getBooksWithAuthorDetails = async function (req, res) {
     let specificBook = await bookModel.find().populate('newAuthor newPublisher')
     res.send({data: specificBook})
@@ -44,4 +57,7 @@ const getBooksWithAuthorDetails = async function (req, res) {
 
 module.exports.createNewBook= createNewBook
 module.exports.getAllBooks= getAllBooks
+module.exports.newData= newData
+module.exports.increaseSale= increaseSale
+
 module.exports.getBooksWithAuthorDetails = getBooksWithAuthorDetails
