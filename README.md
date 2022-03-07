@@ -1,12 +1,15 @@
 # thorium
 Backend cohort Feb 2022 - May 2022
 
-Next() :
+
+# Next() :
 it is a callback function in a middleware
 it passses the control to the subsequent function
 if next () is missed, the control flow will hang
-Route based Middlewares
-Global Middlewares
+
+# Route based Middlewares
+
+# Global Middlewares
 manages the flow of control
 code reusability esp for restrivted routes
 sit between your router and your HANDLER
@@ -14,15 +17,15 @@ router.post('/getHomePage' , MiddlewareIfLoggedIn, UserController.homePage)
 
 function MiddlewareIfLoggedIn( req, res, next) { if loggedIn then call the next fucntion/handler which will give us the home page feeds else res.send( " please login or register") }
 
-restricted API's
+# restricted API's
 router.get('/homePage', mid1, UserController.feeds) router.get('/profileDetails', mid1, UserController.profileDetails) router.get('/friendList', mid1, UserController.friendList) router.get('/changePassword', mid1, UserController.changePassword)
 
-OPen-to-all API's
+# OPen-to-all API's
 router.get('/termsAndConditions', UserController.termsAndConditions) router.get('/register', UserController.register)
 
 app.use( midGlobal)
 
-body-parser functions:
+# body-parser functions:
 getting the post data in req.body
 getting the req.body data as JSON
 providing the header data in req.header etc etc
