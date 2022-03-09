@@ -47,7 +47,7 @@ const getUserData = async function(req, res) {
     //If no token is present in the request header return error
     if (!token) return req.send({status: false, msg: "token must be present"});
 
-    console.log(token);
+    // console.log(token);
   
     //If a token is present then decode the token with verify function
     // verify takes two inputs:
