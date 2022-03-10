@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { nextTick } = require("process");
 
-const authentication = async function(req, res) {
+const authentication = async function(req, res, next) {
     try{
         let isToken = req.headers["x-auth-token"]
         if (!isToken) {
